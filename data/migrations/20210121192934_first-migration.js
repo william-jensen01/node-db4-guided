@@ -17,6 +17,7 @@ exports.up = function (knex) {
         .notNullable()
         .references('species_id')
         .inTable('species')
+        .onDelete('CASCADE')
     })
     .createTable()
 };
