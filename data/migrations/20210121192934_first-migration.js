@@ -20,7 +20,22 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
     })
     .createTable('zoo_animals', tbl => {
-      // ?
+      tbl.increments('zoo_animals_id')
+
+      tbl.integer('animal_id')
+        .unsigned()
+        .notNullable()
+        .references('animal_id')
+        .inTable('species')
+        .onDelete('CASCADE')
+
+      tbl.integer('animal_id')
+        .unsigned()
+        .notNullable()
+        .references('animal_id')
+        .inTable('animals')
+        // .onDelete('RESTRICT')
+        .onDelete('CASCADE')
     })
 };
 
