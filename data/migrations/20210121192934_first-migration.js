@@ -6,7 +6,8 @@ exports.up = function (knex) {
       tbl.string('address', 128).notNullable().unique()
     })
     .createTable('species', tbl => {
-      // ?
+      tbl.increments("species_id");
+      tbl.string("species_name", 128).unique().notNullable();
     })
     .createTable()
     .createTable()
