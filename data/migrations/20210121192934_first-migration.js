@@ -9,7 +9,9 @@ exports.up = function (knex) {
       tbl.increments("species_id");
       tbl.string("species_name", 128).unique().notNullable();
     })
-    .createTable()
+    .createTable('animals', tbl => {
+      tbl.increments('animal_id')
+    })
     .createTable()
 };
 
