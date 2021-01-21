@@ -1,6 +1,8 @@
 exports.up = function (knex) {
   return knex.schema
-    .createTable()
+    .createTable('zoos', tbl => {
+      tbl.increments('zoo_id')
+    })
     .createTable()
     .createTable()
     .createTable()
