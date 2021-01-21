@@ -6,7 +6,7 @@ exports.up = function (knex) {
       tbl.string('address', 128).notNullable().unique()
     })
     .createTable('species', tbl => {
-      // 
+      // ?
     })
     .createTable()
     .createTable()
@@ -16,6 +16,6 @@ exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists()
     .dropTableIfExists()
-    .dropTableIfExists()
+    .dropTableIfExists('species')
     .dropTableIfExists('zoos')
 };
