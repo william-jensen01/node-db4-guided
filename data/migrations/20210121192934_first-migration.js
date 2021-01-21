@@ -11,6 +11,8 @@ exports.up = function (knex) {
     })
     .createTable('animals', tbl => {
       tbl.increments('animal_id')
+      tbl.string("animal_name", 128).notNullable();
+      tbl.integer('species_id')
     })
     .createTable()
 };
